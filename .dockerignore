@@ -4,10 +4,6 @@
 .env
 /storage/*.key
 /public/storage
-/public/build
-composer.lock
-package-lock.json
 .phpunit.result.cache
-Dockerfile
-.github/
 .vscode/
+.github/
