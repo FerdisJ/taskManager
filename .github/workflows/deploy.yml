@@ -16,17 +16,24 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.2'
-        extensions: mbstring, xml, ctype, iconv, json, pdo_sqlite
+        extensions: mbstring, xml, ctype, iconv, json, pdo_sqlite, bcmath, curl, gd, zip, dom, fileinfo, filter, tokenizer
         coverage: none
 
     - name: Install dependencies
       run: composer install --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+
+    - name: Install Node dependencies
+      run: npm install
+
+    - name: Build assets
+      run: npm run build
 
     - name: Prepare Laravel
       run: |
         cp .env.example .env
         php artisan key:generate
         touch database/database.sqlite
+        php artisan migrate --force
 
     - name: Run Tests
       run: php artisan test
