@@ -1,0 +1,14 @@
+/node_modules
+/vendor
+/.git
+.env
+/storage/*.key
+/public/storage
+/public/build
+composer.lock
+package-lock.json
+.phpunit.result.cache
+Dockerfile
+docker/
+.github/
+.vscode/

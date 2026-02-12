@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.task-card {
+    @apply bg-slate-900 border border-slate-800 rounded-xl p-4 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/10;
+}
+
+.task-input {
+    @apply bg-slate-900 border border-slate-800 text-white rounded-lg px-4 py-2 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all;
+}
+
+[x-cloak] {
+    display: none !important;
+}
